@@ -1,6 +1,6 @@
 class Gramformer:
 
-  def __init__(self, models=1, use_gpu=False):
+  def __init__(self, models=1, correction_model_tag="prithivida/grammar_error_correcter_v1", use_gpu=False):
     from transformers import AutoTokenizer
     from transformers import AutoModelForSeq2SeqLM
     #from lm_scorer.models.auto import AutoLMScorer as LMScorer
@@ -14,7 +14,6 @@ class Gramformer:
     batch_size = 1    
     #self.scorer = LMScorer.from_pretrained("gpt2", device=device, batch_size=batch_size)    
     self.device    = device
-    correction_model_tag = "prithivida/grammar_error_correcter_v1"
     self.model_loaded = False
 
     if models == 1:
